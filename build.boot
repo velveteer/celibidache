@@ -27,7 +27,7 @@
  '[deraen.boot-less             :refer [less]])
 
 (deftask dev []
-  (comp (serve :dir "target" :not-found 'dev.not-found/not-found-handler :port 8080)
+  (comp (serve :dir "target" :not-found 'dev.not-found/not-found-handler :port 8080 :reload true)
         (watch)
         (reload :on-jsload 'app.core/mount-root)
         (speak)

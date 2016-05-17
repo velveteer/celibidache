@@ -4,7 +4,7 @@
             [re-frame.core :as re-frame]))
 
 (def routes ["/" {""      :home
-                  "about" :about}])
+                  ["about/" [keyword :nested]] :about}])
 
 (defn- parse-url [url]
   (bidi/match-route routes url))
