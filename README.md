@@ -8,13 +8,19 @@ An opinionated starter for writing single-page web applications in [Clojurescrip
 * [bidi](https://github.com/juxt/bidi) & [pushy](https://github.com/kibu-australia/pushy) -- Client-side routing
 * [less4clj](https://github.com/Deraen/less4clj) -- LESS compilation
 * [cljs-devtools](https://github.com/binaryage/cljs-devtools) -- Enhancements for Clojurescript in Chrome DevTools
+* [dirac](https://github.com/binaryage/dirac) -- Chrome DevTools fork with extra features to aid development in ClojureScript.
 * [tachyons](http://tachyons.io/) -- Quickly build and design new UI without writing CSS
 * [font-awesome](http://fontawesome.io/) -- The icons you know and love
 
 ##Boot Tasks
 
-* `boot dev` -- Run local development server. Serves `target` from `localhost:8080`.
-* `boot build` -- Compile code for production. Writes to `dist`.
+* `boot dev` -- Compiles and serves target from `localhost:8080`
+    * Source maps enabled
+    * Re-compiles on file changes
+    * Enables CLJS DevTools and Dirac
+    * 404 handler for client-side routing
+    * Live reloading of assets and code
+* `boot build` -- Compile code for production.
 * `boot test-once` -- Run all tests once
 * `boot auto-test` -- Run all tests on file changes
 
@@ -22,7 +28,6 @@ An opinionated starter for writing single-page web applications in [Clojurescrip
 
 * [boot](https://github.com/boot-clj/boot#install)
 * [phantomjs](http://phantomjs.org/download.html)
-* [Enable custom formatters in Chrome](https://github.com/binaryage/cljs-devtools/blob/master/docs/install.md#enable-custom-formatters-in-chrome)
 
 ##Other Boot starter templates
 

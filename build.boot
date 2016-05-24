@@ -12,35 +12,36 @@
                  [weasel                        "0.7.0"           :scope "test"]
                  [org.clojure/tools.nrepl       "0.2.12"          :scope "test"]
                  [deraen/boot-less              "0.2.1"           :scope "test"]
+                 [binaryage/devtools            "0.6.1"           :scope "test"]
+                 [binaryage/dirac               "0.2.0"           :scope "test"]
+                 [jupl/boot-cljs-devtools       "0.1.0"           :scope "test"]
                  [org.clojure/clojurescript     "1.7.228"]
-                 [binaryage/devtools            "0.6.1"]
                  [reagent                       "0.6.0-alpha"]
                  [re-frame                      "0.7.0"]
                  [bidi                          "2.0.8"]
                  [kibu/pushy                    "0.3.6"]])
 (require
  '[adzerk.boot-cljs             :refer [cljs]]
- '[adzerk.boot-cljs-repl        :refer [cljs-repl]]
+ '[jupl.boot-cljs-devtools      :refer [cljs-devtools]]
  '[adzerk.boot-reload           :refer [reload]]
  '[pandeiro.boot-http           :refer [serve]]
  '[crisptrutski.boot-cljs-test  :refer [test-cljs]]
  '[deraen.boot-less             :refer [less]])
 
 (deftask dev []
-  (comp (serve :dir "target" :not-found 'dev.not-found/not-found-handler :port 8080 :reload true)
-        (watch)
+  (comp (watch)
+        (serve :dir "target" :not-found 'dev.not-found/not-found-handler :port 8080)
         (reload :on-jsload 'app.core/mount-root)
-        (speak)
-        (cljs-repl)
+        (cljs-devtools)
         (cljs :optimizations :none :source-map true)
         (less)
-        (target :dir #{"target"})))
+        (target)))
 
 (deftask build []
   (comp
     (less :compression true)
-    (cljs :optimizations :advanced :compiler-options {:closure-defines {"goog.DEBUG" false}})
-    (target :dir #{"dist"})))
+    (cljs :optimizations :advanced)
+    (target)))
 
 (deftask testing []
   (merge-env! :resource-paths #{"test/cljs"})
