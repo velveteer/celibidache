@@ -7,7 +7,7 @@
 (defmulti pages identity)
 (defmethod pages :home [] [home/main])
 (defmethod pages :about [] [about/main])
-(defmethod pages :default [] [:div])
+(defmethod pages :default [] [:div.tc "Nothing here, chap."])
 
 (defn main []
   (let [current-page (re-frame/subscribe [:current-page])]

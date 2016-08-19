@@ -6,3 +6,7 @@
   :current-page
   (fn [db] (reaction (:current-page @db))))
 
+(register-sub
+  :route-params
+  (fn [db] (reaction (:route-params @db))))
+

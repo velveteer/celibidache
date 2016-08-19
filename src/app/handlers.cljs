@@ -8,6 +8,6 @@
     db/default-db))
 
 (register-handler
-  :current-page
-  (fn [db [_ page]]
-    (merge db {:current-page page})))
+  :route
+  (fn [db [_ {:keys [current-page route-params]}]]
+    (merge db {:current-page current-page :route-params route-params})))
