@@ -20,6 +20,7 @@
                  [kibu/pushy                    "0.3.6"]])
 (require
  '[adzerk.boot-cljs               :refer [cljs]]
+ '[adzerk.boot-cljs-repl          :refer [cljs-repl]]
  '[adzerk.boot-reload             :refer [reload]]
  '[pandeiro.boot-http             :refer [serve]]
  '[crisptrutski.boot-cljs-test    :refer [test-cljs]]
@@ -27,6 +28,7 @@
 
 (deftask dev []
   (comp (watch)
+        (cljs-repl)
         (reload :on-jsload 'app.core/mount-root)
         (serve :dir "target" :not-found 'dev.not-found/not-found-handler :port 8080)
         (cljs :compiler-options {:preloads '[devtools.preload]})
