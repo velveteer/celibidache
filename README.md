@@ -8,7 +8,6 @@ An opinionated starter for writing single-page web applications in [Clojurescrip
 * [bidi](https://github.com/juxt/bidi) & [pushy](https://github.com/kibu-australia/pushy) -- Client-side routing
 * [less4clj](https://github.com/Deraen/less4clj) -- LESS compilation
 * [cljs-devtools](https://github.com/binaryage/cljs-devtools) -- Enhancements for Clojurescript in Chrome DevTools
-* [dirac](https://github.com/binaryage/dirac) -- Chrome DevTools fork with extra features to aid development in ClojureScript.
 * [tachyons](http://tachyons.io/) -- Quickly build and design new UI without writing CSS
 * [font-awesome](http://fontawesome.io/) -- The icons you know and love
 
@@ -17,7 +16,7 @@ An opinionated starter for writing single-page web applications in [Clojurescrip
 * `boot dev` -- Compiles and serves target from `localhost:8080`
     * Source maps enabled
     * Re-compiles on file changes
-    * Enables CLJS DevTools and Dirac
+    * Enables CLJS DevTools (remember to enable custom formatters)
     * 404 handler for client-side routing
     * Live reloading of assets and code
 * `boot build` -- Compile code for production.
