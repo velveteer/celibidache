@@ -1,8 +1,8 @@
-#celibidache
+# celibidache
 
 An opinionated starter for writing single-page web applications in [Clojurescript](https://github.com/clojure/clojurescript).
 
-##Includes
+## Includes
 
 * [re-frame](https://github.com/Day8/re-frame) -- Data flow library for [reagent](https://github.com/reagent-project/reagent)
 * [bidi](https://github.com/juxt/bidi) & [pushy](https://github.com/kibu-australia/pushy) -- Client-side routing
@@ -11,7 +11,7 @@ An opinionated starter for writing single-page web applications in [Clojurescrip
 * [tachyons](http://tachyons.io/) -- Quickly build and design new UI without writing CSS
 * [font-awesome](http://fontawesome.io/) -- The icons you know and love
 
-##Boot Tasks
+## Boot Tasks
 
 * `boot dev` -- Compiles and serves target from `localhost:8080`
     * Source maps enabled
@@ -23,12 +23,12 @@ An opinionated starter for writing single-page web applications in [Clojurescrip
 * `boot test-once` -- Run all tests once
 * `boot auto-test` -- Run all tests on file changes
 
-##Requirements
+## Requirements
 
 * [boot](https://github.com/boot-clj/boot#install)
 * [phantomjs](http://phantomjs.org/download.html)
 
-##Other Boot starter templates
+## Other Boot starter templates
 
 * [saapas](https://github.com/Deraen/saapas)
 * [jamal](https://github.com/pandeiro/jamal)
